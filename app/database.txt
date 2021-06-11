@@ -1,0 +1,11 @@
+CREATE KEYSPACE studentmgmt WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
+
+CREATE TABLE student(
+id int PRIMARY KEY,
+name text,
+course text,
+subjects set<text>,
+marks map<text,int>
+);
+
+INSERT INTO student (id, name, course, subjects, marks) VALUES(1,'ram', 'MCA', {'C','Java'}, {'C':80,'Java':90});
